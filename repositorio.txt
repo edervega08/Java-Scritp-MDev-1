@@ -1,0 +1,5 @@
+pasos para actulizar el repositorio
+
+git add .
+git commit -m "Mensaje descriptivo"
+git push
