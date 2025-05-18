@@ -1,5 +1,17 @@
+pasos para iniciar el repositorio
+
+git init
+git add .
+git commit -m "Primer commit"
+git remote add origin https://github.com/tuusuario/tu-repo.git
+git branch -M main
+git push -u origin main
+git branch -M main
+git push -u origin main
+
+
 pasos para actulizar el repositorio
 
 git add .
-git commit -m "Mensaje descriptivo"
+git commit -m "actulizar"
 git push
