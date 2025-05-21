@@ -36,70 +36,90 @@ let resultado3=suma3(5,6,1,2,3);
 console.log(resultado3);
 console.log(typeof suma);
 
-
+// ===============================
 // Declaraciones y expresiones en JavaScript
+// ===============================
 
-// declaration = declaración
-// Es una instrucción que crea algo que se puede reutilizar o referenciar más adelante
-/*
-// Ejemplos de declaraciones válidas:
-let a = 5;               // declara una variable
-const b = 10;            // declara una constante
-function saluda() {}     // declara una función
-async function carga() {} // declara una función asíncrona
-class Persona {}         // declara una clase
-export default a;        // exportar un valor (módulos)
-import algo from './x';  // importar un valor (módulos)
+// ========== DECLARATIONS (Declaraciones) ==========
+// Una declaración define algo que puede usarse más adelante (crear variables, funciones, clases, etc.)
 
-// NOTA: Aunque "var" también declara, es desaconsejado porque ignora el alcance de bloque
+let numero = 10;                    // declaración de variable
+const PI = 3.14;                    // declaración de constante
+function saludar() {                // declaración de función
+    console.log("Hola mundo");
+}
+async function cargarDatos() {}     // declaración de función asíncrona
+class Persona {                     // declaración de clase
+    constructor(nombre) {
+        this.nombre = nombre;
+    }
+}
+export const edad = 22;             // declaración export
+// import se usa en módulos, no se puede ejecutar directamente aquí
 
-// Otras declaraciones importantes:
-try {} catch (e) {}      // bloque de manejo de errores
-do {} while (x < 5);     // ciclo "hacer mientras"
-while (x < 5) {}         // ciclo "mientras"
+try {
+    // declaración try...catch para manejar errores
+    throw new Error("error de prueba");
+} catch (e) {
+    console.log("Se manejó un error");
+}
 
-// statement = sentencia (estructura de control, no devuelve valor directo)
-if (true) {
-  // bloque condicional
+do {
+    console.log("Una vez con do...while");
+} while (false);
+
+while (false) {
+    console.log("Esto no se ejecuta");
+}
+
+// ========== STATEMENTS (Sentencias) ==========
+// Controlan el flujo del programa, no producen directamente un valor
+
+if (numero > 5) {
+    console.log("El número es mayor que 5");
+} else {
+    console.log("El número es 5 o menor");
 }
 
 for (let i = 0; i < 3; i++) {
-  // bucle con contador
+    console.log("Iteración", i);
 }
 
-else {
-  // parte contraria de un if
+switch (numero) {
+    case 5:
+        console.log("Es 5");
+        break;
+    case 10:
+        console.log("Es 10");
+        break;
+    default:
+        console.log("No coincide");
 }
 
-switch (a) {
-  case 1:
-    break;
+// ========== EXPRESSIONS (Expresiones) ==========
+// Cualquier parte del código que se evalúe en un valor
+
+let suma = 4 + 6;          // expresión de suma → 10
+let x = 4;                 // expresión de asignación → 4
+function retornar() {
+    return "Hola";
 }
+let saludo = retornar();  // expresión de llamada → "Hola"
+let doble = (n) => n * 2; // función flecha (expresión)
+console.log(doble(5));    // → 10
 
-// Expresión (expression) en JS:
-// Cualquier porción de código que se evalúe en un valor (número, string, booleano, objeto, etc.)
+// expresiones booleanas
+let esMayor = x > 2;      // → true
+console.log(esMayor);
 
-// Ejemplos de expresiones:
-4 + 6           // suma: devuelve 10
-x = 4           // asignación: devuelve 4
-miFuncion()     // llamada a función: devuelve su retorno
-true            // booleano: devuelve true
-"hola" + "mundo" // concatenación: devuelve "holamundo"
-[1, 2, 3]       // array literal: devuelve el array
-{nombre: "Ana"} // objeto literal: devuelve el objeto
+// expresiones de objetos, arreglos, funciones anónimas
+let persona = { nombre: "Ana", edad: 25 };   // objeto
+let lista = [1, 2, 3];                       // arreglo
+let anonima = function() { return "Hola"; }; // función anónima
+console.log(anonima());
 
-// También hay expresiones más avanzadas:
-x > 3           // expresión booleana: true o false
-() => x * 2     // función flecha (también es una expresión)
-function() {}   // función anónima (expresión si no tiene nombre)
-
+// ===============================
 // En resumen:
-// Declaración = define algo (función, variable, clase, etc.)
-// Sentencia = controla el flujo del programa (if, for, etc.)
-// Expresión = produce un valor
-
-// Las expresiones pueden estar dentro de declaraciones:
-// Ejemplo:
-let total = 4 + 6; // declaración con expresión dentro
-
-*/
+// Declaración → define algo que puedes usar después
+// Sentencia → estructura que controla el flujo
+// Expresión → evalúa en un valor
