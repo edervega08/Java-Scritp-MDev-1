@@ -1,23 +1,31 @@
+// Funciones en JavaScript
 
-//se crea una variable haciendo referencia por asi decir que despues vamos a mandar a llamar
-function saludar(){
-
-    console.log('hola mundo');
-    
+// Se crea una función que realiza una tarea específica y se puede reutilizar
+// Al definirla, se guarda como referencia (aún no se ejecuta)
+function saludar() {
+    console.log('hola mundo'); // esto se ejecuta cuando se llama la función
 }
-saludar();
 
-function suma(){
+saludar(); // llamada a la función → muestra "hola mundo"
 
-
-    return 2+2;
-
+// Otra función que retorna un valor
+function suma() {
+    return 2 + 2; // devuelve 4, no lo muestra directamente
 }
-//let resultado=suma();
-//console.log(resultado);
-//o
 
-console.log(suma());//si no se pone los parentesis de la funcion que pasa?
+// Podemos guardar el resultado o imprimirlo directo:
+let resultado = suma();
+console.log(resultado); // 4
 
+// O también así directo:
+console.log(suma()); // 4
 
+// ¿Qué pasa si NO se ponen los paréntesis al llamar?
+console.log(suma); 
+// Sin paréntesis, se muestra la definición de la función, NO se ejecuta
+// Es útil cuando quieres pasar la función como argumento o referencia
 
+// En resumen:
+// - function nombre() { } → declaración
+// - nombre() → llamada (con paréntesis, se ejecuta)
+// - nombre  → solo referencia (sin ejecutarse)
